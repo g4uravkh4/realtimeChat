@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "realtime-chat-guff": {
+      "hosting": {
+        "realtimeChat": [
+          "realtime-chat-guff"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "realtime-chat-guff"
+  }
+}

@@ -1,0 +1,5 @@
+1. setup and connect to firebase
+npm install -g firebase-tool
+firabase login
+firebase projects:create --display-name 'realtime chat'
+ng add @angular/fire
