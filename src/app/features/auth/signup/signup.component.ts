@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,8 +16,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class SignupComponent implements OnInit {
   form!: FormGroup;
-  router: any;
-  constructor(private auth: AuthService, private snackbar: MatSnackBar) {}
+  constructor(
+    private auth: AuthService,
+    private snackbar: MatSnackBar,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
