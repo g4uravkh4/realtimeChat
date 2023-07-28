@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import {
   Auth,
-  authState,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from '@angular/fire/auth';
-import { BehaviorSubject, Observable, from, of, switchMap } from 'rxjs';
-import { SigninCredentials, SignupCredentials } from './auth.model';
+import { SigninCredentials, SignupCredentials } from './autnentication.model';
+import { from, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthenticationService {
   constructor(private auth: Auth) {}
 
   signIn({ email, password }: SigninCredentials) {

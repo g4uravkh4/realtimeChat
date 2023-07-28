@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,11 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   form!: FormGroup;
-  constructor(
-    private auth: AuthService,
-    private snackbar: MatSnackBar,
-    private router: Router
-  ) {}
+  constructor(private auth: AuthenticationService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -33,7 +23,6 @@ export class SignupComponent implements OnInit {
   signUp() {
     this.auth.signUp(this.form.value).subscribe({
       next: () => this.router.navigate(['chat']),
-      error: (error) => this.snackbar.open(error.message),
     });
   }
 }

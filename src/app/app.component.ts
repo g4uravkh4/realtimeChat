@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './features/auth/auth.service';
+import { AuthenticationService } from './features/authentication/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'realtimeChat';
-  constructor(public auth: AuthService, private router: Router) {}
+  constructor(public auth: AuthenticationService, private router: Router) {}
 
   signOut() {
     this.auth.signOut().subscribe({
